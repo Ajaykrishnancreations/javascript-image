@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-image</title>
+
+<script>
+    var i=0;
+    var arr=Array("1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg")
+    function showani(){
+    {
+        document.getElementById("img").src=arr[i];
+        document.getElementById("imgname").innerHTML=arr[i];
+    }
+    i=i+1;
+    if(i>=6)
+    i=0;
+    setTimeout(showani,4000);
+    }
+    //----------------------------------------------------
+    function forword()
+    {
+        i=i+1;
+        if(i==arr.length)
+        i=0;
+
+        if(i>=0 && i<=6)
+    {
+        document.getElementById("img").src=arr[i];
+        document.getElementById("imgname").innerHTML=arr[i];
+    }
+    }
+//--------------------------------------------
+function backword()
+
+
+{
+        i=i-1;
+        if(i==-1)
+        i=arr.length-1;
+
+        if(i>=0 && i<=6)
+    {
+        document.getElementById("img").src=arr[i];
+        document.getElementById("imgname").innerHTML=arr[i];
+    }
+}
+    
+</script>
+
+
+</head>
+<body onload="showani()">
+    <img src="1.jpg" width="100%" height="400px" id="img">
+    <center>
+       <input type="button" id="but1" value="<" onclick="backword()">
+       <span id="imgname"></span> 
+       <input type="button" id="but2" value=">" onclick="forword()">
+    </center>
+    
+</body>
+</html>
